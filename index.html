@@ -1,239 +1,284 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Auto Detailing Experts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        :root {
-            --main-blue: hsl(216, 57%, 25%);
-            --dark-gray: #1e293b;
-            --light-gray: #f1f5f9;
-            --white: #fff;
-            --accent: #38bdf8;
-        }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(ligt rgb(181, 255, 181));
-            color: var(--dark-gray);
-        }
-        header {
-            background: var(--main-blue);
-            color: var(--white);
-            padding: 2rem 0 1.5rem 0;
-            text-align: center;
-            position: relative;
-        }
-        .logo-img {
-            width: 180px;
-            max-width: 90vw;
-            height: auto;
-            display: block;
-            margin: 0 auto 1.2rem auto;
-            border-radius: 16px;
-            box-shadow: 0 4px 32px #0002;
-            background: #a8f7c2;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 1;
-        }
-        header p {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 1;
-        }
-        nav {
-            margin-top: 1.2rem;
-            position: relative;
-            z-index: 1;
-        }
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-        section {
-            max-width: 900px;
-            margin: 2.5rem auto;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 2px 20px #1e293b11;
-            padding: 2rem;
-            position: relative;
-        }
-        section h2 {
-            color: var(--main-blue);
-            margin-top: 0;
-        }
-        /* Zorg dat tekst goed leesbaar blijft */
-        #over p, #over h2 {
-            position: relative;
-            z-index: 2;
-            background: rgba(255,255,255,0.88);
-            display: inline-block;
-            padding: 0.1em 0.4em;
-            border-radius: 6px;
-        }
-        .overons-logo-bottom {
-            display: flex;
-            justify-content: center;
-            margin-top: 2.2em;
-        }
-        .services-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        .service {
-            flex: 1 1 250px;
-            background: var(--light-gray);
-            border-radius: 8px;
-            padding: 1.2rem;
-            box-shadow: 0 1px 6px #2563eb22;
-        }
-        .service h3 {
-            margin-top: 0;
-            color: var(--accent);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        input, textarea {
-            padding: 0.7rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-        button {
-            background: var(--main-blue);
-            color: var(--white);
-            padding: 0.8rem 1.7rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button:hover {
-            background: var(--accent);
-        }
-        footer {
-            text-align: center;
-            background: var(--dark-gray);
-            color: var(--white);
-            padding: 1.2rem 0;
-            margin-top: 2rem;
-            font-size: 1rem;
-        }
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .photo-gallery img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px #1e293b22;
-            object-fit: cover;
-            height: 180px;
-            background: #e2e8f0;
-        }
-        @media (max-width: 700px) {
-            section, .services-list {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            .services-list {
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>PRIMEGLØSS Detailing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #0b0f0e;
+      --green: #1f3d2b;          /* winter green */
+      --green-light: #2f6b4b;
+      --accent: #6ee7b7;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #060807, var(--dark));
+      color: var(--text);
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      padding: 6rem 1.5rem 5rem;
+      text-align: center;
+      background:
+        linear-gradient(rgba(6,8,7,0.75), rgba(6,8,7,0.9)),
+        url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid #1f3d2b;
+    }
+
+    header h1 {
+      text-shadow: 0 10px 30px rgba(0,0,0,.8);
+
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      letter-spacing: 6px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    header p {
+      text-shadow: 0 6px 18px rgba(0,0,0,.7);
+
+      margin-top: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    nav {
+      margin-top: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width .3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    section p {
+      color: var(--muted);
+      max-width: 750px;
+      line-height: 1.7;
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service {
+      background: linear-gradient(180deg, #0f1a15, #060807);
+      border: 1px solid #1f3d2b;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,.6);
+    }
+
+    .service h3 {
+      margin-top: 0;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    /* ================= GALLERY ================= */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #1f3d2b;
+      filter: brightness(.9);
+      transition: transform .3s ease, filter .3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+    }
+
+    /* ================= FORM ================= */
+    form {
+      margin-top: 2.5rem;
+      max-width: 600px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #1f3d2b;
+      background: #060807;
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #6b7280;
+    }
+
+    button {
+      background: linear-gradient(135deg, var(--accent), #34d399);
+      color: #022c22;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(52,211,153,.35);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      margin-top: 5rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85rem;
+      border-top: 1px solid #1f3d2b;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Auto Detailing Experts</h1>
-        <p>Professionele autoreiniging en detailing op locatie.</p>
-        <nav>
-            <a href="#over">Over Ons</a>
-            <a href="#diensten">Diensten</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section id="over">
-        <h2>Over Ons</h2>
-        <p>
-            Wij zijn twee vrienden met een passie voor auto’s en perfectie. Met ervaring in auto detailing zorgen wij ervoor dat jouw auto er weer als nieuw uitziet. Kwaliteit, betrouwbaarheid en klant tevredenheid staan bij ons centraal.
-        </p>
-        <div class="overons-logo-bottom"></div>
-    </section>
+<header>
+  <h1>PRIME<span>GLØSS</span></h1>
+  <p>Luxury Auto Detailing · Crafted to Shine</p>
+  <nav>
+    <a href="#about">Over ons</a>
+    <a href="#services">Diensten</a>
+    <a href="#gallery">Resultaten</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <section id="diensten">
-        <h2>Onze Diensten</h2>
-        <div class="services-list">
-            <div class="service">
-                <h3>Exterieur Reiniging</h3>
-                <p>Grondige handwassen velgenreiniging voor een stralende auto.</p>
-            </div>
-            <div class="service">
-                <h3>Interieur Reiniging</h3>
-                <p>Stofzuigen, bekleding, reinigen en dashboardverzorging voor een fris interieur.</p>
-            </div>
-            <div class="service">
-                <h3>op aanvraag</h3>
-                <p>window cleaning en een verfrissende geur</p>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <h2>Over PRIMEGLØSS</h2>
+  <p>
+    PRIMEGLØSS is opgericht vanuit pure passie voor auto’s en perfectie.
+    Wij leveren high-end detailing met oog voor elk detail – van diepe glans
+    tot verfijnde afwerking. Luxe, kwaliteit en vertrouwen staan centraal.
+  </p>
+</section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Heb je vragen of wil je een afspraak maken? Vul het onderstaande formulier in, en wij nemen zo snel mogelijk contact met je op!</p>
-        <!-- Updated form: -->
-        <form action="https://formspree.io/f/mwprezbq" method="POST">
-            <input type="text" name="name" placeholder="Naam" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <textarea name="message" rows="4" placeholder="Bericht" required></textarea>
-            <button type="submit">Versturen</button>
-        </form>
-    </section>
+<section id="services">
+  <h2>Diensten</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Exterieur Detailing</h3>
+      <p>Handwas, velgen, lakverzorging en bescherming voor maximale glans.</p>
+    </div>
+    <div class="service">
+      <h3>Interieur Detailing</h3>
+      <p>Dieptereiniging van bekleding, tapijten en interieurafwerking.</p>
+    </div>
+    <div class="service">
+      <h3>Op Aanvraag</h3>
+      <p>Ramen, geurbehandeling en gespecialiseerde behandelingen.</p>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        &copy; 2025 Auto Detailing Experts &mdash; Alle rechten voorbehouden
-    </footer>
+<section id="gallery">
+  <h2>Resultaten</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Detail+1" >
+    <img src="https://via.placeholder.com/400x300?text=Detail+2" >
+    <img src="https://via.placeholder.com/400x300?text=Detail+3" >
+    <img src="https://via.placeholder.com/400x300?text=Detail+4" >
+  </div>
+</section>
 
-    <section id="fotos">
-        <h2>Foto’s</h2>
-        <p>Bekijk enkele resultaten van onze recente detailing werkzaamheden.</p>
-        <div class="photo-gallery">
-            <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Auto detailing foto 1">
-            <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Auto detailing foto 2">
-            <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Auto detailing foto 3">
-            <img src="https://via.placeholder.com/300x200?text=Foto+4" alt="Auto detailing foto 4">
-            <img src="https://via.placeholder.com/300x200?text=Foto+5" alt="Auto detailing foto 5">
-            <img src="https://via.placeholder.com/300x200?text=Foto+6" alt="Auto detailing foto 6">
-        </div>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Afspraak maken of een vraag? Stuur ons een bericht.</p>
+  <form action="https://formspree.io/f/mwprezbq" method="POST">
+    <input type="text" name="name" placeholder="Naam" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="subject" placeholder="Onderwerp" required>
+    <textarea name="message" rows="4" placeholder="Bericht" required></textarea>
+    <button type="submit">Versturen</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 PRIMEGLØSS Detailing · Luxury Auto Care
+</footer>
+
 </body>
 </html>
+
 
 
 
